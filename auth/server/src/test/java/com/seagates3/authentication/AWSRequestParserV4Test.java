@@ -81,8 +81,8 @@ public class AWSRequestParserV4Test {
                 "57125c02a6f29093f5bd21dcd6e717f1996852");
 
         when(fullHttpRequest.headers()).thenReturn(httpHeaders);
-        when(fullHttpRequest.getMethod()).thenReturn(HttpMethod.GET);
-        when(fullHttpRequest.getUri()).thenReturn("/");
+        when(fullHttpRequest.method()).thenReturn(HttpMethod.GET);
+        when(fullHttpRequest.uri()).thenReturn("/");
 
         StringBuilder params = new StringBuilder();
         params.append("Action=IAMAction")

@@ -109,8 +109,8 @@ public class AWSRequestParserTest {
         ClientRequestToken clientRequestToken = Mockito.mock(ClientRequestToken.class);
 
         when(httpRequest.headers()).thenReturn(new DefaultHttpHeaders().add("host", "s3.seagate.com"));
-        when(httpRequest.getMethod()).thenReturn(HttpMethod.GET);
-        when(httpRequest.getUri()).thenReturn("/");
+        when(httpRequest.method()).thenReturn(HttpMethod.GET);
+        when(httpRequest.uri()).thenReturn("/");
 
         // Act
         awsRequestParser.parseRequestHeaders(httpRequest, clientRequestToken);
