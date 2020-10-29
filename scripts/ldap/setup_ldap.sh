@@ -84,6 +84,10 @@ fi
 yum install -y openldap-servers openldap-clients
 cp -f $INSTALLDIR/olcDatabase\=\{2\}mdb.ldif /etc/openldap/slapd.d/cn\=config/
 
+# Add password file to ldap group
+# onlyif: grep -q ldap /etc/group && test -f /etc/openldap/certs/password
+chgrp ldap /etc/openldap/certs/password
+
 if [[ $defaultpasswd == true ]]
 then # Fetch Root DN & IAM admin passwords from Salt and decrypt it
     if rpm -q "salt"  > /dev/null;
